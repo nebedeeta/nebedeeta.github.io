@@ -234,7 +234,7 @@ nav.main-nav a.cta {
 }
 
 .home #avatar {
-    float: right;
+    float: center;
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -463,7 +463,8 @@ thead th, th {
 }
 
 img {
-    width: 100%;
+    margin: 0 auto;   
+    width: 80%;
     max-width: 100%;
     border-radius: 3px;
 }
@@ -488,11 +489,13 @@ Post List
 }
 
 #post-list li, #archive-list li {
+    margin: 40px 0;
     list-style-type: none;
 }
 
 #post-list li:last-child {
     margin-bottom: 0;
+    
 }
 
 #post-list li+li {
