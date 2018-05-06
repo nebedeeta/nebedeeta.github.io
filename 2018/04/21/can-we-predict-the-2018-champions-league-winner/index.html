@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		 
+			
+  
+    <meta name="twitter:card" content="summary"/>
+    
+      <meta name="twitter:image" content="/images/avatar.png" />
+    
+  
+  
+  <meta name="twitter:title" content="Can we predict the 2018 Champion&#39;s League winner?"/>
+  <meta name="twitter:description" content="Introduction Football is the leader sport in 31 out of the 51 countries in Europe and to avoid putative misunderstanding with our American readers, I mean soccer amigos. Europeans express their love for football in various and diverse ways, most of them accompanied with alcohol and flatbread Italian delicacies. But we are not here to judge, we are here to make money (well, try to make money at least).
+I hate to admit that this post is not scientifically motivated."/>
+  
+  
+  
+  
+    <meta name="twitter:creator" content="@Nibedeeta had a plan"/>
+  
+
+
+
+		
+		<meta name="author" content="Nibedeeta had a plan">
+		<meta name="description" content="John Doe&#39;s personal website">
+		<meta name="generator" content="Hugo 0.39" />
+		<title>Can we predict the 2018 Champion&#39;s League winner? &middot; Bravo Nibedeeta</title>
+		<link rel="shortcut icon" href="/images/favicon.ico">
+		<link rel="stylesheet" href="/css/style.css">
+		<link rel="stylesheet" href="/css/highlight.css">
+
+		
+		<link rel="stylesheet" href="/css/font-awesome.min.css">
+		
+
+		
+		<link href="/index.xml" rel="alternate" type="application/rss+xml" title="Bravo Nibedeeta" />
+		
+
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='/'> <span class="arrow">←</span>Home</a>
+	
+	<a href='/posts'>Archive</a>
+	<a href='/tags'>Tags</a>
+	<a href='/about'>About</a>
+
+	
+
+	
+	<a class="cta" href="/index.xml">Subscribe</a>
+	
+</nav>
+
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        Can we predict the 2018 Champion&#39;s League winner?
+                    </h1>
+                    <h2 class="headline">
+                    Apr 21, 2018 21:13
+                    · 2677 words
+                    · 13 minute read
+                      <span class="tags">
+                      
+                      
+                          
+                              <a href="/tags/soccer">Soccer</a>
+                          
+                              <a href="/tags/plot">plot</a>
+                          
+                              <a href="/tags/regression">regression</a>
+                          
+                      
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                  
+                
+                <section id="post-body">
+                    <div id="introduction" class="section level2">
+<h2>Introduction</h2>
+<p>Football is the leader sport in <a href="https://www.snack-media.com/2016/05/how-popular-is-football-around-the-world/">31 out of the 51 countries</a> in Europe and to avoid putative misunderstanding with our American readers, I mean soccer amigos. Europeans express their love for football in various and diverse ways, most of them accompanied with alcohol and flatbread Italian delicacies. But we are not here to judge, we are here to make money (well, try to make money at least).</p>
+<p>I hate to admit that this post is not scientifically motivated. Invoking our inner nerds (dude let’s not elaborate on that, to come to the point and read this post, you must be a nerd) we all reminisce moments when our obsessed-with-football-betting dad asked us for a scientific advice on which team will win.</p>
+<p>There several ways to reply to a request like that:</p>
+<ul>
+<li>you can refuse to make a prediction (been there but this is a subject of a more sentimental post)</li>
+<li>you can take a random guess (for the unlucky nerds I think the 0.33 probability is a no go)</li>
+<li>you can let nerds with hardly any social skills, do it formally for you.</li>
+</ul>
+<p>If you are here, you are probably smart enough to choose the last option, which spares you hours of literature review, data searching, coding and many other activities that ensure that we will die alone, hoping that the result worth the effort.</p>
+<p>After some research, we discovered this annual football competition called UEFA Champion’s league that attracts a lot of football fan attention. For us football ignorant nerds, you can think of Champion’s League as the annual ISBA<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> conference where non-EU based professors are not allowed to participate (I know ISBA without Gelman is like garlic sauce without garlic). Professors (Barcelona, Liverpool etc) and young researchers (Dynamo Kiev, Benfica etc) are then called to compete one another by presenting cool but time consuming MC samplers (INLA rocks!).</p>
+<p>The winner then gets the <strong>European Bayes League trophy</strong>, typically consisting in a publication with discussion on JRSS-B.</p>
+<p>This already sounds amazing but to make it more spicy, PhD students could support their favourite Bayesian professor/young researcher by betting their scholarship money on him/her. We cannot help but wonder, where should these poor, food-deprived, frustrated and with an apparent gambling addiction PhD student put their money on?</p>
+<p>We are not delusional (although we wait patiently for our significant other to come and save us from this world’s misery riding Drogon), we know we are not the first attempted this and we acknowledge the complexity of the issue. In general the Poisson distribution is the most common approach for modelling the number of goals in a football match. (Probably mean) Statisticians have observed a relatively low correlation between the number of goals scored by the two components (that of course needs to be taken into account), and this is where the cornucopia of random effects began, you can check <a href="https://s3.amazonaws.com/academia.edu.documents/8134872/03_karlis_ntzoufras_2000_student_final_scanned.pdf?AWSAccessKeyId=AKIAIWOWYYGZ2Y53UL3A&amp;Expires=1525613609&amp;Signature=lnvcvnFiLAJSut01PEX5FsY9HqU%3D&amp;response-content-disposition=inline%3B%20filename%3DO11_Modellirig_Soccer_Data.pdf">Karlis &amp; Ntzoufras</a> and, as any student who’s fighting with bibtex would say, the references therein. <a href="https://rss.onlinelibrary.wiley.com/doi/abs/10.1111/1467-9884.00366">Karlis &amp; Ntzoufras</a> (same authors, different paper) used a bivariate Poisson with a series of random effects and modelled the Italian Serie A data for 1991-1992 and the Champions League data for the 2000-2001 season. <a href="https://rss.onlinelibrary.wiley.com/doi/abs/10.1111/1467-9884.00243">Rue &amp; Salvesen</a> used data from the English Premier League and suggested a Bayesian dynamic GLM to predict the next week-end’s score. <a href="https://www.tandfonline.com/doi/abs/10.1080/02664760802684177">Baio &amp; Blangiardo</a> extended the model suggested by Karlis &amp; Ntzoufras (the second one), proposed a hierarchical Bayesian approach (which is of course cooler than the EM &amp; maximum likelihood, but not data drivHAHAHAHA) and tested its performance using the Italian Serie A championship 2007-2008.</p>
+<p>Our approach is neither novel nor constists of a pleathora of random effects. We had plenty of time the past month (if you are my supervisor read: I have been working solely on the grant till midnight for the past month) and decided to apply Baio &amp; Blangiardo’s model to this years’ Champion’s League data. This year there were four teams competing for the Champion’s league trophy: Liverpool, Roma, Bayern and Real. Our <strong>GOAL</strong> (see what i did there?) is using 2018 Champion’s League data to predict the 2018 Champion’s League winner and get an estimate about the final score.</p>
+</div>
+<div id="methods" class="section level2">
+<h2>Methods</h2>
+<p>From a statistical standpoint, the result of a football match <span class="math inline">\(g\)</span> is a bivariate random variable <span class="math inline">\((Y_{g,H},Y_{g,A})\)</span> representing the goals scored by the Home Team <span class="math inline">\(Y_{g,H}\)</span> and those scored by the Away Team <span class="math inline">\(Y_{g,A}\)</span>. Yes, you <strong><em>may</em></strong> think that this is a sad way of seeing the world.</p>
+<p>As always with count data, our first guess is that both variables are Poisson distributed, i.e. <span class="math inline">\(Y_{g,T}\sim \text{Poisson}(\theta_{g,T})\)</span>. The parameters of these Poisson distributions, the scoring intensities <span class="math inline">\(\theta_{g, H}\)</span> and <span class="math inline">\(\theta_{g,A}\)</span>, depend on how strong in attack is the team whose goals we are counting and how bad in defence is their adversary. There is no doubt about that, but there are several different ways of materializing this intuition.</p>
+<p>In the most trivial model, the random effects (or latent variables, depending on what’s trendier at the moment) representing the strength in attack and defence of each team are assumed to stay the same through-out the whole competition. This is a rather strong assumption judging by the Liverpool performance at the first semi-finals against Roma. But again, we warned you “Don’t bet your savings”. In formulas this assumption translates to:</p>
+<p><span class="math display">\[ \begin{cases} \log\theta_{g,H} = \text{home} + \text{attack}_{H(g)} + \text{defence}_{A(g)} \\
+\log\theta_{g,A} =  \text{attack}_{A(g)} + \text{defence}_{H(g)}
+\end{cases}\]</span></p>
+<p>where <span class="math inline">\(H(g)\)</span> and <span class="math inline">\(A(g)\)</span> are indexes specifying the Home and the Away team at game <span class="math inline">\(g\)</span>. The model for the two teams are not symmetrical because we know that playing home is better. This may be the time where the ISBA comparison starts to creple: I have always thought that for a socially awkward academics it may be easier to give a talk in front of a bunch of strangers rather than embarrassing themselves in front of their friends (but this may also be material for another, rather personal, post).</p>
+<p>In terms of priors (and although this is a discussion that could last a lifetime I will keep it quick), we used skeptical (i.e. mean <span class="math inline">\(0\)</span>) but non-informative (i.e. precision <span class="math inline">\(0.01\)</span>) Gaussian for all random effects.</p>
+</div>
+<div id="results" class="section level2">
+<h2>Results</h2>
+<p>Before having a look at the first results, keep in mind that we started the analysis before the results of the first semi-finals. By the time we got model running and had a first draft, we could add the results of the first semi-finals, and thus update the dataset and compare the predictions. Of course now we know the teams that will compete on the final match (Liverpool and Real Madrid) but for the shake of discussion we will act like we don’t know.</p>
+<p>Enough with the babbling, my dad wants to know if the money spent on my education, and the fact that he hasn’t seen any grandchild yet worth it.</p>
+<p>Table 1 shows the expected goals not taking into consideration the first round of semi-finals, whereas Table 2 takes into account the first round of semi-finals. The columns of these Tables show the mean goals and standard deviation scored by each team, and the probability of a win, loose or tie with the corresponding credibility regions.</p>
+<p>Judging by the standard deviation of the H-Team and A-team goals, it would be slightly naive to bet any money on the precise score. Let’s give a rough interpretation for the lay audience using the Liverpool vs Roma, result on Table 1. The mean goals Liverpool scores is 2.5 (lets say 3 goals) vs 1 goal for Roma. That gives a score of 3-1. Yep, you are right, predicting the 5-2 of Liverpool against Roma was proven our Waterloo (not the Abba one, spoiler alert a Eurovision post will follow)</p>
+<p>However there is not much certainty around this result since the model suggests that for Liverpool the goals could easily vary from 0 to 7 and for Roma from 0 to 4 (that is not entirely correct but let’s assume it is for the shake of communicating the results).</p>
+<p>The probabilities on these Tables were calculated by taking the posterior difference of the goals per pair, and calculating the probability that this difference is larger (H-Team wins), lower (A-team wins) and equal (Tie) to 0. The probability of Liverpool winning the match with Roma is <span class="math inline">\(P = 0.61\)</span> and (5-2 the real score), <span class="math inline">\(P=0.2\)</span> that Bayern wins Real (1-2 the real score), <span class="math inline">\(P=0.62\)</span> that Real wins Bayern (2-2, the real score) and <span class="math inline">\(P = 0.29\)</span> that Roma wins Liverpool (4-2, the real score). That gives the model 50% success on predicting the winner. The results after updating the data using first round semi-finals where similar (Table 2). The same thing applies when this Table’s away team becomes the host, but we do not present the results here, you got the point.</p>
+<table>
+<caption><span id="tab:unnamed-chunk-1">Table 1: </span>Table 1. Predictions without first round of the semi-finals</caption>
+<thead>
+<tr class="header">
+<th align="left">H-Team</th>
+<th align="left">A-Team</th>
+<th align="left">H-Goal<br/> Mean (sd)</th>
+<th align="left">A-Goal<br/> Mean (sd)</th>
+<th align="left">H-Team wins<br/> P (CI)</th>
+<th align="left">A-team wins<br/> P (CI)</th>
+<th align="left">Tie<br/> P (CI)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Liverpool</td>
+<td align="left">Roma</td>
+<td align="left">2.5 (2.3)</td>
+<td align="left">1.1 (1.4)</td>
+<td align="left">0.61 (0.61, 0.62)</td>
+<td align="left">0.22 (0.21, 0.22)</td>
+<td align="left">0.17 (0.16, 0.18)</td>
+</tr>
+<tr class="even">
+<td align="left">Bayern Munich</td>
+<td align="left">Real Madrid</td>
+<td align="left">1.2 (1.2)</td>
+<td align="left">2.1 (1.9)</td>
+<td align="left">0.27 (0.27, 0.28)</td>
+<td align="left">0.53 (0.52, 0.53)</td>
+<td align="left">0.2 (0.19, 0.22)</td>
+</tr>
+<tr class="odd">
+<td align="left">Real Madrid</td>
+<td align="left">Bayern Munich</td>
+<td align="left">2.5 (2.2)</td>
+<td align="left">0.96 (1.1)</td>
+<td align="left">0.62 (0.62, 0.63)</td>
+<td align="left">0.2 (0.19, 0.2)</td>
+<td align="left">0.18 (0.17, 0.19)</td>
+</tr>
+<tr class="even">
+<td align="left">Roma</td>
+<td align="left">Liverpool</td>
+<td align="left">1.3 (1.5)</td>
+<td align="left">2.1 (2)</td>
+<td align="left">0.29 (0.28, 0.3)</td>
+<td align="left">0.53 (0.52, 0.54)</td>
+<td align="left">0.18 (0.17, 0.2)</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption><span id="tab:unnamed-chunk-1">Table 1: </span>Table 2. Predictions with first round of the semi-finals</caption>
+<thead>
+<tr class="header">
+<th align="left">H-Team</th>
+<th align="left">A-Team</th>
+<th align="left">H-Goal<br/> Mean (sd)</th>
+<th align="left">A-Goal<br/> Mean (sd)</th>
+<th align="left">H-Team wins<br/> P (CI)</th>
+<th align="left">A-team wins<br/> P (CI)</th>
+<th align="left">Tie<br/> P (CI)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Liverpool</td>
+<td align="left">Roma</td>
+<td align="left">5 (0)</td>
+<td align="left">2 (0)</td>
+<td align="left">1 (1, 1)</td>
+<td align="left">0 (0, 0)</td>
+<td align="left">0 (0, 0)</td>
+</tr>
+<tr class="even">
+<td align="left">Bayern Munich</td>
+<td align="left">Real Madrid</td>
+<td align="left">1 (0)</td>
+<td align="left">2 (0)</td>
+<td align="left">0 (0, 0)</td>
+<td align="left">1 (1, 1)</td>
+<td align="left">0 (0, 0)</td>
+</tr>
+<tr class="odd">
+<td align="left">Real Madrid</td>
+<td align="left">Bayern Munich</td>
+<td align="left">2.2 (1.8)</td>
+<td align="left">0.97 (1.1)</td>
+<td align="left">0.62 (0.61, 0.62)</td>
+<td align="left">0.18 (0.17, 0.18)</td>
+<td align="left">0.21 (0.19, 0.22)</td>
+</tr>
+<tr class="even">
+<td align="left">Roma</td>
+<td align="left">Liverpool</td>
+<td align="left">1.3 (1.4)</td>
+<td align="left">2.8 (2)</td>
+<td align="left">0.21 (0.2, 0.22)</td>
+<td align="left">0.65 (0.64, 0.66)</td>
+<td align="left">0.14 (0.13, 0.16)</td>
+</tr>
+</tbody>
+</table>
+<p>At this point we can say with some evidence that the model in terms of predicting Champion’s League results is more or less lousy. A natural extension (that does not require hours of looking for covariates) is to include a random effect that accounts for phase effect. To get an estimate about the semi-finals we needed some data on the semi-finals, thus we used the updated dataset with the first round of the semi-finals. The results again are far from the truth; however it seems that by adding a phase effect, the home team gets an advantage. Just think to the Roma results: (4:1; 3:0) with Barcellona and (5:2, 4:2) with Liverpool. Given this results it seems reasonable that the phase effect turns out to be an home effect. Although far-fetched and marginally overinterpretation with the amount of data available, a possible interpretation of this effect might be that as a team approaches the Champion’s League final, fans tend to be more and more supportive and this support is better reflected on the Home team.</p>
+<table>
+<caption><span id="tab:unnamed-chunk-2">Table 2: </span>Table 3. Predictions with first round of the semi-finals and phase effect</caption>
+<thead>
+<tr class="header">
+<th align="left">H-Team</th>
+<th align="left">A-Team</th>
+<th align="left">H-Goal<br/> Mean (sd)</th>
+<th align="left">A-Goal<br/> Mean (sd)</th>
+<th align="left">H-Team wins<br/> P (CI)</th>
+<th align="left">A-team wins<br/> P (CI)</th>
+<th align="left">Tie<br/> P (CI)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Liverpool</td>
+<td align="left">Roma</td>
+<td align="left">5 (0)</td>
+<td align="left">2 (0)</td>
+<td align="left">1 (1, 1)</td>
+<td align="left">0 (0, 0)</td>
+<td align="left">0 (0, 0)</td>
+</tr>
+<tr class="even">
+<td align="left">Bayern Munich</td>
+<td align="left">Real Madrid</td>
+<td align="left">1 (0)</td>
+<td align="left">2 (0)</td>
+<td align="left">0 (0, 0)</td>
+<td align="left">1 (1, 1)</td>
+<td align="left">0 (0, 0)</td>
+</tr>
+<tr class="odd">
+<td align="left">Real Madrid</td>
+<td align="left">Bayern Munich</td>
+<td align="left">3.1 (2.4)</td>
+<td align="left">1.3 (1.3)</td>
+<td align="left">0.67 (0.67, 0.68)</td>
+<td align="left">0.17 (0.17, 0.18)</td>
+<td align="left">0.15 (0.14, 0.17)</td>
+</tr>
+<tr class="even">
+<td align="left">Roma</td>
+<td align="left">Liverpool</td>
+<td align="left">2 (1.8)</td>
+<td align="left">3.3 (2.3)</td>
+<td align="left">0.24 (0.24, 0.25)</td>
+<td align="left">0.62 (0.61, 0.62)</td>
+<td align="left">0.14 (0.13, 0.16)</td>
+</tr>
+</tbody>
+</table>
+<p>As far as predicting the champion’s league winner, all the possible scenarios are shown on Table 4, with of course Real Madrid looking the most plausible winner. For these results, we excluded the home effect in the final match, since the Champion’s League final takes place on “neutral” ground (Ukraine). It is also interesting to compare our results with <a href="http://www.uefa.com">the official Champion’s League statistics</a> for the final, where the probability that Real Madrid or Liverpool wins is <span class="math inline">\(P=0.42\)</span> and <span class="math inline">\(P= 0.33\)</span> respectively, and there is a <span class="math inline">\(P = 0.25\)</span> for a draw (for the first 90 minutes; disregarding extra time and penalties). Interestingly, the probability that Liverpool wins coincides with our model’s probability but also with the probability of predicting the results by <strong>randomly guessing</strong>.</p>
+<table>
+<caption><span id="tab:unnamed-chunk-3">Table 3: </span>Table 4. All possible prediction for the Champion’s League winner</caption>
+<thead>
+<tr class="header">
+<th align="left">H-Team</th>
+<th align="left">A-Team</th>
+<th align="left">H-Goal<br/> Mean (sd)</th>
+<th align="left">A-Goal<br/> Mean (sd)</th>
+<th align="left">H-Team wins<br/> P (CI)</th>
+<th align="left">A-team wins<br/> P (CI)</th>
+<th align="left">Tie<br/> P (CI)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Liverpool</td>
+<td align="left">Bayern Munich</td>
+<td align="left">1.7 (1.5)</td>
+<td align="left">1.4 (1.4)</td>
+<td align="left">0.46 (0.44, 0.47)</td>
+<td align="left">0.34 (0.32, 0.35)</td>
+<td align="left">0.21 (0.18, 0.24)</td>
+</tr>
+<tr class="even">
+<td align="left">Real Madrid</td>
+<td align="left">Liverpool</td>
+<td align="left">2.5 (2.1)</td>
+<td align="left">1.8 (1.7)</td>
+<td align="left">0.5 (0.48, 0.51)</td>
+<td align="left">0.33 (0.32, 0.35)</td>
+<td align="left">0.17 (0.14, 0.2)</td>
+</tr>
+<tr class="odd">
+<td align="left">Roma</td>
+<td align="left">Real Madrid</td>
+<td align="left">1.5 (1.4)</td>
+<td align="left">2.9 (2.2)</td>
+<td align="left">0.24 (0.23, 0.26)</td>
+<td align="left">0.61 (0.59, 0.62)</td>
+<td align="left">0.15 (0.12, 0.18)</td>
+</tr>
+<tr class="even">
+<td align="left">Roma</td>
+<td align="left">Bayern Munich</td>
+<td align="left">1.5 (1.4)</td>
+<td align="left">1.6 (1.4)</td>
+<td align="left">0.37 (0.35, 0.38)</td>
+<td align="left">0.41 (0.4, 0.43)</td>
+<td align="left">0.22 (0.19, 0.25)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="wrapping-up" class="section level2">
+<h2>Wrapping up</h2>
+<p>Oh guys we admitted it already in the results that the model is more or less crappy as far as predicting precise scores. This reflects the complexity of the issue and the incredible amount of randomness in the result: who would have bet that Roma beat Barcellona for 3-0? Maybe it’s better if we go back to the old school way (i.e. applying for grants) rather than trying to fund our future Post-docs with money won gambling.</p>
+<p>Of course, we could always try to improve predictions by introducing a temporal structure within the season, or using data from previous seasons to inform our priors or even use covariates (team budget, injuries, mean sexual appetite of players’ girlfriend etc.) and so on and so forth. However may not be a viable option for Champion’s League results, where we have to deal with an additional complication: we hardly have any data on each team (at least in comparison to national Leagues, where each team plays with all the other teams of the League). Thus adding complexity here (read parameters) might not be the way to go (good luck fitting a 20 parameters model). This is exactly the case where fancier does not mean better predictions (turns out <a href="https://simple.wikipedia.org/wiki/Occam%27s_razor">Occam</a> isn’t just an excuse to show that statistician are not arid people but they have deep and philosophical interests as well).</p>
+<p>I bet you all think that this was a total waste of time from our sides. <a href="https://en.wikipedia.org/wiki/Rationalization_(psychology)">We do not see it this way</a>. As far as predicting the winner though, using data we were able to improve the 0.33 random guess probability prediction (at least for Real Madrid and the draw), and have a better idea of what’s going to happen. A football Guru might argue that he could have done the same thing in the blink of an eye, silently using his prior knowledge. We are not here to meditate; we are here to provide scientific arguments based on teams’ performance during Champion’s League 2018. To put it another way, the time we spent on this project (roughly 20 hours) and the time we dedicated in watching any type of football during the past 5 years is at most 20 hours and 5 minutes (all 3 of us). The time an average fan spends on watching football during 5 years is roughly 225 hours (assuming that one watched at least 20 matches of the team ones supports during the national leagues and at least 10 Champion’s League matches per year, excluding Europa league, world and European cup). Thus, we gained the same knowledge (purely talking about predictions) than an average football fan using less that 10% of the time he needs to acquire this knowledge.</p>
+<p>Now back to our <strong>GOAL</strong> (oh my God it’s still funny!): Dad, if you came this far, I found some evidence that Real will win this year’s Champion’s league. If you bet and win, any contribution to the ISBA registration fees is highly appreciated, my supervisor is a bit short on cash.</p>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>International Society of Bayesian Statistics – the one that asks for contributions for mantaining Reverend Bayes tomb in mint conditions, no joke<a href="#fnref1">↩</a></p></li>
+</ol>
+</div>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=%2f2018%2f04%2f21%2fcan-we-predict-the-2018-champions-league-winner%2f - Can%20we%20predict%20the%202018%20Champion%27s%20League%20winner%3f "><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+                <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = ''; 
+
+     
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.facebook.com/nodejh">
+        <i class="fa fa-facebook-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.github.com/nibedeeta">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/nodejh">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+       © Copyright 2018 <i class="fa fa-heart" aria-hidden="true"></i> Nibedeeta had a plan
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="/js/jquery-3.3.1.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+  
+
+
+
+
+    </body>
+</html>
