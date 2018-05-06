@@ -6,7 +6,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     font: inherit;
     vertical-align: baseline;
     margin: 0;
-    padding: 0
+    padding: 0;
+    text-align: justify
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
@@ -183,14 +184,14 @@ nav.main-nav a {
     top: 8px;
     right: 6px;
     padding: 8px 12px;
-    color: #5badf0;
+    color: #b28442;
     font-size: 13px;
     line-height: 1.35;
     border-radius: 3px;
 }
 
 nav.main-nav a.cta {
-    background: #5badf0;
+    background: #b28442;
     color: #fff;
     margin-left: 12px;
 }
@@ -207,7 +208,7 @@ nav.main-nav a.cta {
       top: 8px;
       right: 6px;
       padding: 8px 8px;
-      color: #5badf0;
+      color: #b28442;
       font-size: 13px;
       line-height: 1.35;
       border-radius: 3px;
@@ -246,12 +247,12 @@ nav.main-nav a.cta {
 
 a, #title, #post-list a:hover, #title:hover {
     text-decoration: none;
-    color: #5badf0;
-    color: #5694f1;
+    color: #b28442;
+    color: #b28442;
 }
 
 p a {
-    color: #5694f1;
+    color: #b28442;
 }
 
 
@@ -527,7 +528,7 @@ Post List
 }
 
 #archive-link:hover {
-    background: #5694f1;
+    background: #b28442;
     color: #fff;
     box-shadow: 0 0 0 1px #5694f1;
 }
@@ -592,7 +593,7 @@ Post List
     font-size: 23px;
     margin-left: 1px;
     margin-top: 4px;
-    color: #d4d4d4;
+    color: ##b28442;
     display: inline-block;
     vertical-align: middle;
 }
